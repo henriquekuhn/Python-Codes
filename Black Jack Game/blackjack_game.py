@@ -21,22 +21,25 @@ def get_card(quantity, player):
     lista_your = []
     lista_machine = []
     for _ in range(quantity):
-        random_deck = random.randint(0,(len(decks_qty)-1))
-        random_nipe = random.choice(list(deck))
+        random_deck = random.randint(0,(len(decks_qty)-1)) #Get a random deck
+        random_nipe = random.choice(list(deck)) #Get a random nipe from the deck
 
+        #Get a random card from 'random_deck' and 'random_nipe'
+        #considering their actual size
         random_card = random.randint(1,len(decks_qty[random_deck][random_nipe]))
 
+        #Remove the card from the deck to prevent it from being drawn again.    
         decks_qty[random_deck][random_nipe].pop(random_card-1)
 
-        if player == 1:
+        if player == 1: 
             if your_hand.get(random_nipe) is None:
                 your_hand[random_nipe] = []         
-            your_hand[random_nipe].append(random_card)
+            your_hand[random_nipe].append(random_card) #Create a dict with player cards
             
         else:
             if machine_hand.get(random_nipe) is None:
                 machine_hand[random_nipe] = []         
-            machine_hand[random_nipe].append(random_card)
+            machine_hand[random_nipe].append(random_card) #Create a dict with dealer cards
             
     
 def sum_points(hand):
