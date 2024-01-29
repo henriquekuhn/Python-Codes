@@ -1,14 +1,13 @@
 from turtle import Turtle, Screen
 import random
-names = ["rosbiff_the_turtle", "george_the_turtle", "roger_the_turtle", "lula_the_turtle", "dwarf_the_turtle"]
 competitors = []
-colors = ["blue", "green", "red", "yellow", "black"]
+colors = ["blue", "green", "red", "yellow", "black", "orange", "purple"]
 
 
 def create_racers():
     gap =0
     index = 0
-    for new_turtle_racer in names:
+    for new_turtle_racer in range(len(colors)):
         new_turtle_racer = Turtle(shape="turtle")        
         new_turtle_racer.color(colors[index])
         new_turtle_racer.penup()
