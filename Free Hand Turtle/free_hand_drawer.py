@@ -17,7 +17,7 @@ def turn_left():
 
 
 def turn_right():
-    rosbiff_the_turtle.left(10)
+    rosbiff_the_turtle.right(10)
 
 
 def clear_all():
