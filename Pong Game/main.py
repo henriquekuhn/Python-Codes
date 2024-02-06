@@ -25,6 +25,8 @@ screen.onkey(l_paddle.go_up, "w")
 screen.onkey(l_paddle.go_down, "s")
 
 game_is_on = True
+left = 0
+right = 0
 while game_is_on:
     time.sleep(ball.move_speed)
     screen.update()
@@ -33,9 +35,15 @@ while game_is_on:
     if ball.ycor() > 280 or ball.ycor() < -280:
         ball.bounce()
 
-    if ball.distance(r_paddle) < 50 and ball.xcor() > 320 or ball.distance(l_paddle) < 50 and ball.xcor() < 320:
-        ball.paddle_colision()
-        
+    if ball.distance(r_paddle) < 50 and ball.xcor() > 320 and right == 0:
+        right = 1
+        left = 0
+        ball.paddle_colision()        
+
+    elif ball.distance(l_paddle) < 50 and ball.xcor() < -320 and left == 0:
+        right = 0
+        left = 1
+        ball.paddle_colision() 
 
     if ball.xcor() > 390:
         scoreboard.score(1)
