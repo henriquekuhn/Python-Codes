@@ -35,15 +35,18 @@ while game_is_on:
     
     #Detect colision with wall
     if rosbiff.head.xcor() > 285 or rosbiff.head.xcor() < -285 or rosbiff.head.ycor() > 285 or rosbiff.head.ycor() < -285:        
-        game_is_on = False
-        scoreboard.game_over()
+        #game_is_on = False        
+        #scoreboard.game_over()
+        scoreboard.reset_score()
+        rosbiff.reset_game()
 
     #Detect colision with tail. 
     for segment in rosbiff.segments[1:]:
         if rosbiff.head.distance(segment) < 10:
-            game_is_on = False
-            scoreboard.game_over()
-
+            #game_is_on = False
+            #scoreboard.game_over()
+            scoreboard.reset_score()
+            rosbiff.reset_game()
 
 
 screen.exitonclick()    
