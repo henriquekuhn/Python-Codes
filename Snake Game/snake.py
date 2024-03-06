@@ -54,6 +54,7 @@ class Snake():
 
 
     def reset_game(self):
+        
         for seg in self.segments:
             seg.goto(1000,1000)
         self.segments.clear()
