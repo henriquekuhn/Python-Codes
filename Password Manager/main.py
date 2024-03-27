@@ -84,6 +84,7 @@ logo_img = PhotoImage(file="./Password Manager/logo.png")
 canvas.create_image(100, 100, image=logo_img)
 canvas.grid(row=0, column=1)
 
+
 website_label = Label(text="Website:")
 website_label.grid(row=1,column=0)
 email_label = Label(text="Email:")
