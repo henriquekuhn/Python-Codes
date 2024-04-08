@@ -19,6 +19,8 @@ if sheet_data[0]["iataCode"] == "":
 
     for row in sheet_data:
         row["iataCode"] = flight_search.get_destination_code(row["city"])
+    data_manager.destination_data = sheet_data
+    data_manager.update_destination_data()
 
     #print(f"sheet_data:\n {sheet_data}")
 else:
@@ -36,5 +38,3 @@ for destination in sheet_data:
                 message=f"Low price alert! Only £{flight.price} to fly from {flight.origin_city}-{flight.origin_airport} to {flight.destination_city}-{flight.destination_airport}, from {flight.out_date} to {flight.return_date}."
             )
     
-#data_manager.destination_data = sheet_data
-#data_manager.update_destination_data()
