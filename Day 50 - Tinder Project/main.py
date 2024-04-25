@@ -11,8 +11,8 @@ load_dotenv()
 DIR = os.getcwd() + "\Day 50 - Tinder Project"
 os.chdir(DIR)
 
-FB_EMAIL = os.getenv("")
-FB_PASSWORD = os.getenv("")
+FB_EMAIL = os.getenv("FB_EMAIL")
+FB_PASSWORD = os.getenv("FB_PASSWORD")
 
 driver = webdriver.Chrome()
 
